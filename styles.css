@@ -1,3 +1,11 @@
+:root {
+    --dark-blue: #070d19;
+    --lighter-blue: #1e2931;
+    --light-grey: rgb(189, 189, 189);
+    --muted-grey: #4d5a67;
+    --light-blue: #6eabdb;
+}
+
 body {
     font-family: 'Montserrat', sans-serif;
 }
