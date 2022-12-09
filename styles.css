@@ -1,0 +1,27 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-container {
+    display: grid;
+    place-items: center
+}
+
+.books-container {
+    display: grid;
+    place-items: center;
+    width: 50vw;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.book {
+    background-color: lightseagreen;
+    width: 150px;
+    height: 150px;
+    display: grid;
+    place-items: center;
+}
+
+.book span {
+    font-weight: 600;
+}
