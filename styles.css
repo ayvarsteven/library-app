@@ -21,7 +21,7 @@ body {
     display: grid;
     place-items: center;
     width: 50vw;
-    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
 }
 
 .book {
@@ -94,4 +94,16 @@ body {
     color: white;
 
     border-radius: .25rem;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+    transition: 200ms ease;
 }

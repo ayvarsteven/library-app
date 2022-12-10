@@ -32,9 +32,16 @@ let myLibrary = [
 function displayBook() {
     myLibrary.forEach(book => {
         let newBook = document.createElement('div')
-        let bookTitle = document.createTextNode(`${book.title}`)
-        let bookAuthor = document.createTextNode(`${book.author}`)
-        let bookPages = document.createTextNode(`${book.pages}`)
+
+        let bookTitle = document.createElement('p')
+        bookTitle.textContent = `${book.title}`
+
+        let bookAuthor = document.createElement('p')
+        bookAuthor.textContent = `${book.author}`
+
+        let bookPages = document.createElement('p')
+        bookPages.textContent = `${book.pages} pages`
+
         newBook.append(bookTitle, bookAuthor, bookPages)
         document.body.appendChild(newBook)
     })
