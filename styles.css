@@ -5,10 +5,12 @@
     --light-grey: rgb(189, 189, 189);
     --muted-grey: #4d5a67;
     --light-blue: #6eabdb;
+    --main-font: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --secondary-font: 'Bebas Neue', 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--main-font);
     background-color: #f4f4f4;
 }
 
