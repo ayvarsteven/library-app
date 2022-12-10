@@ -27,7 +27,6 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     grid-template-rows: 500px;
-    grid-auto-flow: column;
 
     width: 85vw;
 }
