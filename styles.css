@@ -42,6 +42,18 @@ body {
     padding: 2rem;
     padding-top: 15rem;
     background-color: black;
+    background-image: url(/_images/icons8-books-100.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+
+    color: white;
+
+    position: relative;
+    isolation: isolate;
+}
+
+#cthulhu {
     background-image: url(/_images/cthulhu.jpg);
     background-repeat: no-repeat;
     background-position: center;
@@ -52,6 +64,43 @@ body {
     position: relative;
     isolation: isolate;
 }
+
+#alice {
+    background-image: url(/_images/alice-wonderland.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+
+    position: relative;
+    isolation: isolate;
+}
+
+#cristo {
+    background-image: url(/_images/count-of-montecristo.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+
+    position: relative;
+    isolation: isolate;
+}
+
+#war {
+    background-image: url(/_images/art-of-war.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+
+    position: relative;
+    isolation: isolate;
+}
+
 
 .book::after {
     content: '';
