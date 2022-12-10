@@ -1,7 +1,7 @@
 let myLibrary = [
     {
-        title: 'The Call of Cthulhu',
-        author: 'H. P. Lovecraft',
+        title: 'Call of Cthulhu',
+        author: 'H.P. Lovecraft',
         pages: 420,
         read: false
     },
@@ -26,8 +26,9 @@ let myLibrary = [
         pages: 288,
         read: true
     }
-
 ];
+
+const bookContainer = document.querySelector('#book-container')
 
 function displayBook() {
     myLibrary.forEach(book => {
@@ -37,13 +38,25 @@ function displayBook() {
         bookTitle.textContent = `${book.title}`
 
         let bookAuthor = document.createElement('p')
-        bookAuthor.textContent = `${book.author}`
+        bookAuthor.textContent = `${book.author} | ${book.pages} Pages`
 
-        let bookPages = document.createElement('p')
-        bookPages.textContent = `${book.pages} pages`
+        const btnContainer = document.createElement('div')
 
-        newBook.append(bookTitle, bookAuthor, bookPages)
-        document.body.appendChild(newBook)
+        const readBtn = document.createElement('button')
+        readBtn.textContent = 'READ'
+
+        const removeBtn = document.createElement('button')
+        removeBtn.textContent = 'REMOVE'
+
+        newBook.classList.add('book')
+        bookTitle.classList.add('book-card__title')
+        bookAuthor.classList.add('book-card__details')
+        readBtn.classList.add('book-card__read-btn')
+        removeBtn.classList.add('book-card__remove-btn')
+        
+        btnContainer.append(readBtn, removeBtn)
+        newBook.append(bookTitle, bookAuthor, btnContainer)
+        bookContainer.append(newBook)
     })
 }
 

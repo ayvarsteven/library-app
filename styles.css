@@ -5,6 +5,7 @@
     --light-grey: rgb(189, 189, 189);
     --muted-grey: #4d5a67;
     --light-blue: #6eabdb;
+    --sea-green: #309191;
     --main-font: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --secondary-font: 'Bebas Neue', 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -21,20 +22,79 @@ body {
 
 .books-container {
     display: grid;
-    place-items: center;
-    width: 50vw;
+    place-items: stretch;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    grid-template-rows: auto;
     grid-auto-flow: column;
+
+    width: 75vw;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .book {
     display: grid;
-    place-items: center;
+    align-items: end;
+    justify-content: start;
+    grid-template-rows: 1fr repeat(3, auto);
     
-    padding: 3rem;
-    background-color: lightseagreen;
+    padding: 2rem;
+    padding-top: 15rem;
+    background-color: black;
+    background-image: url(/_images/cthulhu.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 
     color: white;
 
+    position: relative;
+    isolation: isolate;
+}
+
+.book::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 49.06%, #000000 79.69%);
+}
+
+.book-card__title {
+    font-family: var(--secondary-font);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 2.25rem;
+}
+
+.book-card__details {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05rem;
+    font-size: .675rem;
+}
+
+.book-card__read-btn {
+    margin: .5rem .5rem .5rem 0;
+    padding: .5rem 2rem;
+    background-color: var(--sea-green);
+    border: none;
+
+    font-size: .875rem;
+    font-weight: 700;
+    color: white;
+}
+
+.book-card__remove-btn {
+    /* margin: .5rem .5rem .5rem 0; */
+    padding: .5rem 2rem;
+    background-color: var(--sea-green);
+    border: none;
+
+    font-size: .875rem;
+    font-weight: 700;
+    color: white;
 }
 
 .book span {
