@@ -29,6 +29,19 @@ let myLibrary = [
 
 ];
 
+function displayBook() {
+    myLibrary.forEach(book => {
+        let newBook = document.createElement('div')
+        let bookTitle = document.createTextNode(`${book.title}`)
+        let bookAuthor = document.createTextNode(`${book.author}`)
+        let bookPages = document.createTextNode(`${book.pages}`)
+        newBook.append(bookTitle, bookAuthor, bookPages)
+        document.body.appendChild(newBook)
+    })
+}
+
+displayBook()
+
 function Book() {
 
 }
