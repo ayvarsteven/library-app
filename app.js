@@ -1,9 +1,5 @@
 let myLibrary = [
-    {
-        title: 'Steven Ayvar',
-        author: 'Steven Ayvar',
-        pages: 2000
-    }
+    
 ];
 
 const bookContainer = document.querySelector('#book-container')
@@ -57,6 +53,7 @@ function addBookToLibrary() {
 
     myLibrary.push({title, author, pages, read})
     form.reset();
+    createBookCard()
     }
 
 submitBtn.addEventListener('click', (event) => {
