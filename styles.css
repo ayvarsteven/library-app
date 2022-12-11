@@ -191,11 +191,6 @@ body {
     font-weight: 600;
 }
 
-#add-new-book div:nth-child(5) {
-    display: flex;
-    gap: 1rem;
-}
-
 #add-new-book button {
     margin-top: 1rem;
     padding: .375rem 1rem;
@@ -207,8 +202,25 @@ body {
     border-radius: .25rem;
 }
 
+#add-new-book input::placeholder {
+    color: #757575;
+}
+
+.toggle-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-items: start;
+    grid-auto-flow: column;
+    gap: .5rem
+}
+
+.toggle-container span {
+    color: #5f5f5f;
+}
+
 .toggle {
-    --width: 50px;
+    --width: 35px;
     --height: calc(var(--width) / 2);
     --border-radius: calc(var(--height) / 2);
   
