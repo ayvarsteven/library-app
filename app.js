@@ -49,16 +49,17 @@ function Book(title, author, pages, read) {
 }
 
 function addBookToLibrary() {
-
-}
-
-submitBtn.addEventListener('click', (event) => {
-    event.preventDefault()
-    
+    const form = document.querySelector('#add-new-book')
     const title = document.querySelector('#title').value
     const author = document.querySelector('#author').value
     const pages = document.querySelector('#pages').value
     const read = document.querySelector('#myToggle').checked
 
-    console.log({title, author, pages, read})
+    myLibrary.push({title, author, pages, read})
+    form.reset();
+    }
+
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    addBookToLibrary()
 })
