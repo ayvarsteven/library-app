@@ -18,17 +18,17 @@
     <nav>
         <div class="nav-container">
             <a href="">
-            <div class="logo">
-                <span>Library</span>
-                <span>Manager</span>
-            </div>
+                <div class="logo">
+                    <span>Library</span>
+                    <span>Manager</span>
+                </div>
             </a>
 
-            <button class="new-book">New Book</button>
+            <button class="new-book" id="new-book">New Book</button>
         </div>
     </nav>
-    <div class="main-container">
 
+    <div class="main-container">
 
         <div id="book-container" class="books-container">
 
@@ -73,42 +73,35 @@
         </div>
     </div>
 
-
-    <form action="mywebsite.com" method="post" id="add-new-book">
-        <h2>Add New Book</h2>
-        <div class="form-field">
-            <label for="title">Title <br>
-                <input type="text" name="title" id="title" placeholder="The Hobbit">
-            </label>
-        </div>
-
-        <div class="form-field">
-            <label for="author">Author <br>
-                <input type="text" name="author" id="author" placeholder="J.R.R. Tolkien">
-            </label>
-        </div>
-
-        <div class="form-field">
-            <label for="pages">Pages <br>
-                <input type="number" name="pages" id="pages" placeholder="295">
-            </label>
-        </div>
-
-        <div class="form-field toggle-container">
-            <label class="toggle" for="myToggle">
-                <input class="toggle__input" name="" type="checkbox" id="myToggle">
-                <div class="toggle__fill"></div>
-            </label>
-
-            <span>Have You Read It?</span>
-        </div>
-
-        <button type="submit" id="submit-btn">Submit</button>
-    </form>
-
-    <!-- <div id="overlay"></div> -->
-
-
+    <dialog data-modal="modal-1">
+        <form action="mywebsite.com" method="post" id="add-new-book">
+            <button class="close-btn">&times;</button>
+            <h2>Add New Book</h2>
+            <div class="form-field">
+                <label for="title">Title <br>
+                    <input type="text" name="title" id="title" placeholder="The Hobbit">
+                </label>
+            </div>
+            <div class="form-field">
+                <label for="author">Author <br>
+                    <input type="text" name="author" id="author" placeholder="J.R.R. Tolkien">
+                </label>
+            </div>
+            <div class="form-field">
+                <label for="pages">Pages <br>
+                    <input type="number" name="pages" id="pages" placeholder="295">
+                </label>
+            </div>
+            <div class="form-field toggle-container">
+                <label class="toggle" for="myToggle">
+                    <input class="toggle__input" name="" type="checkbox" id="myToggle">
+                    <div class="toggle__fill"></div>
+                </label>
+                <span>Have You Read It?</span>
+            </div>
+            <button type="submit" id="submit-btn">Submit</button>
+        </form>
+    </dialog>
     <script src="app.js"></script>
 </body>
 
