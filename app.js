@@ -7,8 +7,9 @@ let myLibrary = [
 ];
 
 const bookContainer = document.querySelector('#book-container')
+const submitBtn = document.querySelector('#submit-btn')
 
-function displayBook() {
+function createBookCard() {
     myLibrary.forEach(book => {
         let newBook = document.createElement('div')
 
@@ -38,12 +39,26 @@ function displayBook() {
     })
 }
 
-displayBook()
+createBookCard()
 
-function Book() {
-
+function Book(title, author, pages, read) {
+    this.title = title
+    this.author = author
+    this.pages = pages
+    this.read = read
 }
 
 function addBookToLibrary() {
 
 }
+
+submitBtn.addEventListener('click', (event) => {
+    event.preventDefault()
+    
+    const title = document.querySelector('#title').value
+    const author = document.querySelector('#author').value
+    const pages = document.querySelector('#pages').value
+    const read = document.querySelector('#myToggle').checked
+
+    console.log({title, author, pages, read})
+})
