@@ -12,8 +12,61 @@
 
 body {
     font-family: var(--main-font);
-    /* background-color: #f4f4f4; */
-    background-color: #0A0A0A;
+    background-color: #131314;
+}
+
+nav {
+    display: grid;
+    place-items: center;
+
+    width: 100vw;
+    height: 80px;
+
+    box-shadow:
+    0.6px 2.8px 2.2px rgba(0, 0, 0, 0.081),
+    1.5px 6.7px 5.3px rgba(0, 0, 0, 0.103),
+    2.8px 12.5px 10px rgba(0, 0, 0, 0.112),
+    4.9px 22.3px 17.9px rgba(0, 0, 0, 0.115),
+    9.2px 41.8px 33.4px rgba(0, 0, 0, 0.111),
+    22px 100px 80px rgba(0, 0, 0, 0.1)
+  ;    background-color: #1a1c20;
+}
+
+.nav-container { 
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: space-between;
+    width: 85vw;
+}
+
+.nav-container a {
+    text-decoration: none;
+}
+
+nav span:nth-of-type(1) {
+    font-size: 2rem;
+    font-weight: 800;
+    color: white;
+}
+
+nav span:nth-of-type(2) {
+    font-size: 2rem;
+    font-weight: 400;
+    color: white;
+}
+
+.new-book {
+    color: white;
+    background-color: #2a2e35;
+    padding: .5rem 3rem;
+    border-radius: .375rem;
+    border: 1px solid #43484e;
+}
+
+.new-book:hover {
+    background-color: var(--sea-green);
+    border: 2px solid #2f3136;
 }
 
 .main-container {
@@ -27,8 +80,18 @@ body {
     grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     grid-template-rows: 500px;
+    margin: 5rem;
 
     width: 85vw;
+
+    box-shadow:
+  0.6px 2.8px 2.2px rgba(0, 0, 0, 0.081),
+  1.5px 6.7px 5.3px rgba(0, 0, 0, 0.103),
+  2.8px 12.5px 10px rgba(0, 0, 0, 0.112),
+  4.9px 22.3px 17.9px rgba(0, 0, 0, 0.115),
+  9.2px 41.8px 33.4px rgba(0, 0, 0, 0.111),
+  22px 100px 80px rgba(0, 0, 0, 0.1)
+;
 }
 
 .book {
