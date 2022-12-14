@@ -26,4 +26,39 @@ function createPerson(firstName, lastName, age) {
     })
 }
 
-const steven = createPerson('Steven', 'Ayvar', 27);
+const userProto = {
+    sayHello() {
+        console.log(`Hello my name is ${this.firstName} ${this.lastName} and I am ${this.age} years old.`)
+    },
+    statePhoneNumber() {
+        console.log(this.phoneNumber)
+    }
+}
+
+const user1 = createPerson('Steven', 'Ayvar', 27);
+
+// Example of closure and using a function to close off the private variables and functions of an object
+function UserFactoryFunction(firstName, lastName, age) {
+    let phoneNumber = 9565134948;
+    let email = 'ayvarsteven@gmail.com'
+    function _createUserInfo() {
+        return `My email is ${email} and my phoneNumber is ${phoneNumber}`
+    }
+
+    return Object.create(userProto, {
+        firstName: {
+            value: firstName
+        },
+        lastName: {
+            value: lastName
+        },
+        age: {
+            value: age
+        },
+        secretInfo: {
+            value: _createUserInfo()
+        }
+    })
+}
+
+const steven = UserFactoryFunction('Steven', 'Ayvar', 27)
