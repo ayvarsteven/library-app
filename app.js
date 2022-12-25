@@ -1,11 +1,25 @@
-let myLibrary = [
-    
-];
-
-const bookContainer = document.querySelector('#book-container')
-const submitBtn = document.querySelector('#submit-btn')
-
-
+const myLibrary = [
+    {
+        title: 'The Call of Cthulhu',
+        author: 'H.P. Lovecraft',
+        pages: 420
+    },
+    {
+        title: 'Alice in Wonderland',
+        author:'Lewis Carroll',
+        pages: 200,
+    },
+    {
+        title: 'The Count of MonteCristo',
+        author: 'Alexandre Dumas',
+        pages: 894
+    },
+    {
+        title: 'The Art of War',
+        author: 'Sun Tzu',
+        pages: 300
+    }
+]
 
 
 
