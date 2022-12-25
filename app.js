@@ -6,22 +6,9 @@ const bookContainer = document.querySelector('#book-container')
 const submitBtn = document.querySelector('#submit-btn')
 
 
-function tempFunct() {
-    const newBookFormDialog = document.querySelector('[data-modal="modal-1"]')
-    const newBookForm = document.querySelector('#add-new-book')
-    const newBookBtn = document.querySelector('#new-book')
-    const closeBtn = document.querySelector('.close-btn')
 
-    newBookBtn.addEventListener('click', () => {
-        newBookFormDialog.showModal();
-    })
 
-    closeBtn.addEventListener('click', () => {
-        newBookFormDialog.close()
-    })
-}
 
-tempFunct()
 
 function createBookCard() {
     myLibrary.forEach(book => {
