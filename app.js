@@ -70,19 +70,16 @@ const submitBtn = document.querySelector('#submit-btn')
 function createBookCard() {
     myLibrary.forEach(book => {
         let newBook = document.createElement('div')
-
         let bookTitle = document.createElement('p')
-        bookTitle.textContent = `${book.title}`
-
         let bookAuthor = document.createElement('p')
-        bookAuthor.textContent = `${book.author} | ${book.pages} Pages`
-
         const btnContainer = document.createElement('div')
-
         const readBtn = document.createElement('button')
-        readBtn.textContent = 'READ'
-
         const removeBtn = document.createElement('button')
+
+
+        bookAuthor.textContent = `${book.author} | ${book.pages} Pages`
+        bookTitle.textContent = `${book.title}`
+        readBtn.textContent = 'READ'
         removeBtn.textContent = 'REMOVE'
 
         newBook.classList.add('book')
@@ -96,8 +93,6 @@ function createBookCard() {
         bookContainer.append(newBook)
     })
 }
-
-createBookCard()
 
 function Book(title, author, pages, read) {
     this.title = title
