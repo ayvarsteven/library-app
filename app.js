@@ -63,21 +63,12 @@ function Book(title, author, pages, read) {
     this.read = read
 }
 
-function addBookToLibrary() {
-    const form = document.querySelector('#add-new-book')
-    const title = document.querySelector('#title').value
-    const author = document.querySelector('#author').value
-    const pages = document.querySelector('#pages').value
-    const read = document.querySelector('#myToggle').checked
-
-    myLibrary.push({title, author, pages, read})
-    form.reset();
-    createBookCard()
+const checkLibraryForExisting = (title) => {
+    for(i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].title === title) {
+            console.log(`This book is already in the library`)
+            return `This book is already in the library`
+            // TODO - need to stop the program from executing, as of now it'll only log the message but still continue
+        }
     }
-
-submitBtn.addEventListener('click', (event) => {
-    event.preventDefault()
-    const newBookFormDialog = document.querySelector('[data-modal="modal-1"]')
-    addBookToLibrary()
-    newBookFormDialog.close()
-})
+}
