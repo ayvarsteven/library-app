@@ -11,27 +11,6 @@ const myLibrary = (() => {
   const collection = [];
 
   /**
-   *
-   * @param {string} title Book title
-   * @param {string} author Book author
-   * @param {number} pages Number of pages in the book
-   * @param {boolean} read True if book is read, else false
-   * @returns object with book properties
-   */
-  function libraryManager(title, author, pages, read) {
-    const newBook = Object.create(null);
-    newBook.title = title;
-    newBook.author = author;
-    newBook.pages = pages;
-    newBook.read = read;
-    const bookExistsInLibrary = checkLibraryForExisting(newBook);
-    if (bookExistsInLibrary === true) return alert('This book is already in the library');
-    addBookToLibrary(newBook);
-    const [lastAddedBook] = collection.slice(-1);
-    createBookCard(lastAddedBook);
-  }
-
-  /**
    * Gets HTML elements from DOM
    * @returns {object} containing queried HTML elements
    */
@@ -45,6 +24,18 @@ const myLibrary = (() => {
     const form = document.getElementById('add-new-book');
     return {
       bookContainer, newBookFormDialog, newBookForm, newBookBtn, submitBtn, closeBtn, form,
+    };
+  }
+
+  function createHtmlElements() {
+    const newBook = document.createElement('div');
+    const bookTitle = document.createElement('p');
+    const bookAuthor = document.createElement('p');
+    const btnContainer = document.createElement('div');
+    const readBtn = document.createElement('button');
+    const removeBtn = document.createElement('button');
+    return {
+      bookAuthor, bookTitle, readBtn, removeBtn, newBook, btnContainer,
     };
   }
 
@@ -75,6 +66,27 @@ const myLibrary = (() => {
   })();
 
   /**
+   *
+   * @param {string} title Book title
+   * @param {string} author Book author
+   * @param {number} pages Number of pages in the book
+   * @param {boolean} read True if book is read, else false
+   * @returns object with book properties
+   */
+  function libraryManager(title, author, pages, read) {
+    const newBook = Object.create(null);
+    newBook.title = title;
+    newBook.author = author;
+    newBook.pages = pages;
+    newBook.read = read;
+    const bookExistsInLibrary = checkLibraryForExisting(newBook);
+    if (bookExistsInLibrary === true) return alert('This book is already in the library');
+    addBookToLibrary(newBook);
+    const [lastAddedBook] = collection.slice(-1);
+    createBookCard(lastAddedBook);
+  }
+
+  /**
  * Checks library, if book is in collection return true
  * @param {object} book Book object being passed in for comparison
  * @returns true if the book exists in the library, else false
@@ -94,18 +106,6 @@ const myLibrary = (() => {
    */
   function addBookToLibrary(book) {
     collection.push(book);
-  }
-
-  function createHtmlElements() {
-    const newBook = document.createElement('div');
-    const bookTitle = document.createElement('p');
-    const bookAuthor = document.createElement('p');
-    const btnContainer = document.createElement('div');
-    const readBtn = document.createElement('button');
-    const removeBtn = document.createElement('button');
-    return {
-      bookAuthor, bookTitle, readBtn, removeBtn, newBook, btnContainer,
-    };
   }
 
   function createBookCard(book) {
