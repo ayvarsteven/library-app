@@ -40,15 +40,26 @@ const myLibrary = (() => {
     console.log(collection)
   }
 
-    const addBook = ({title, author, pages, read}) => {
-        title,
-        author,
-        pages,
-        read
-        return {title, author, pages, read}
-    }
-    return { addBook, collection}
-})()
+  /**
+   * Method for adding a new book to the library, returns object
+   * @param {string} title Book Title
+   * @param {string} author Book Author
+   * @param {number} pages Number of pages in the book
+   * @param {boolean} read True if read, else false
+   */
+  const addBook = (title, author, pages, read) => {
+    const newBook = Object.create(null);
+    newBook.title = title;
+    newBook.author = author;
+    newBook.pages = pages;
+    newBook.read = read;
+    addBookToLibrary(newBook);
+    // return newBook
+    // return {title, author, pages, read}
+  };
+
+  return { addBook, collection };
+})();
 
 myLibrary.addBook(
     'The Call of Cthulhu',
