@@ -35,8 +35,9 @@ const myLibrary = (() => {
     const bookExistsInLibrary = checkLibraryForExisting(newBook);
     if (bookExistsInLibrary === true) return alert('This book is already in the library');
     addBookToLibrary(newBook);
-    createBookCard();
-    return newBook;
+    const [lastAddedBook] = collection.slice(-1);
+    createBookCard(lastAddedBook);
+  }
   }
 
   /**
