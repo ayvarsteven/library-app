@@ -5,8 +5,6 @@
 /* eslint-disable no-console */
 // /* eslint-disable */
 
-// TODO - connect form elements with logic
-
 const myLibrary = (() => {
   const collection = [];
 
