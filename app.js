@@ -31,6 +31,10 @@ const myLibrary = (() => {
     createBookCard(lastAddedBook);
   }
 
+  /**
+   * Gets HTML elements from DOM
+   * @returns {object} containing queried HTML elements
+   */
   function getHtmlElements() {
     const bookContainer = document.querySelector('#book-container');
     const newBookFormDialog = document.querySelector('[data-modal="modal-1"]');
@@ -44,6 +48,9 @@ const myLibrary = (() => {
     };
   }
 
+  /**
+   * adds event handlers to html elements
+   */
   const addEventHandlers = (() => {
     const {
       bookContainer, newBookFormDialog, newBookForm, newBookBtn, submitBtn, closeBtn, form,
