@@ -103,45 +103,27 @@ const submitBtn = document.querySelector('#submit-btn')
 
 // 1B
 function createBookCard() {
-    myLibrary.forEach(book => {
-        let newBook = document.createElement('div')
-        let bookTitle = document.createElement('p')
-        let bookAuthor = document.createElement('p')
-        const btnContainer = document.createElement('div')
-        const readBtn = document.createElement('button')
-        const removeBtn = document.createElement('button')
+  myLibrary.forEach((book) => {
+    const newBook = document.createElement('div');
+    const bookTitle = document.createElement('p');
+    const bookAuthor = document.createElement('p');
+    const btnContainer = document.createElement('div');
+    const readBtn = document.createElement('button');
+    const removeBtn = document.createElement('button');
 
+    bookAuthor.textContent = `${book.author} | ${book.pages} Pages`;
+    bookTitle.textContent = `${book.title}`;
+    readBtn.textContent = 'READ';
+    removeBtn.textContent = 'REMOVE';
 
-        bookAuthor.textContent = `${book.author} | ${book.pages} Pages`
-        bookTitle.textContent = `${book.title}`
-        readBtn.textContent = 'READ'
-        removeBtn.textContent = 'REMOVE'
+    newBook.classList.add('book');
+    bookTitle.classList.add('book-card__title');
+    bookAuthor.classList.add('book-card__details');
+    readBtn.classList.add('book-card__read-btn');
+    removeBtn.classList.add('book-card__remove-btn');
 
-        newBook.classList.add('book')
-        bookTitle.classList.add('book-card__title')
-        bookAuthor.classList.add('book-card__details')
-        readBtn.classList.add('book-card__read-btn')
-        removeBtn.classList.add('book-card__remove-btn')
-        
-        btnContainer.append(readBtn, removeBtn)
-        newBook.append(bookTitle, bookAuthor, btnContainer)
-        bookContainer.append(newBook)
-    })
-}
-
-function Book(title, author, pages, read) {
-    this.title = title
-    this.author = author
-    this.pages = pages
-    this.read = read
-}
-
-const checkLibraryForExisting = (title) => {
-    for(i = 0; i < myLibrary.length; i++) {
-        if (myLibrary[i].title === title) {
-            console.log(`This book is already in the library`)
-            return `This book is already in the library`
-            // TODO - need to stop the program from executing, as of now it'll only log the message but still continue
-        }
-    }
+    btnContainer.append(readBtn, removeBtn);
+    newBook.append(bookTitle, bookAuthor, btnContainer);
+    bookContainer.append(newBook);
+  });
 }
