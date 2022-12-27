@@ -5,18 +5,28 @@
 // TODO - 1B - integrate create card function as a method
 
 const myLibrary = (() => {
-    const collection = []
+  const collection = [];
 
-    const _checkLibraryForExisting = (title) => {
-        for(i = 0; i < collection.length; i++) {
-            if (collection[i].title === title) {
-                console.log(`This book is already in the library`)
-                // return `This book is already in the library`
-                // TODO - need to stop the program from executing, as of now it'll only log the message but still continue
-                // use mediator pattern to communicate?
-            }
-        }
+    const libraryManager = function () {
+      // mediator - the functions should not call each other instead the
+      // mediator should communicate with each function directly
+      // listen for add book
+      // check library for existing
+      // if no error, add book to library
+    };
+
+  /**
+ * Checks library, if book is in collection return true
+ * @param {object} book Book object being passed in for comparison
+ * @returns true if the book exists in the library, else false
+ */
+  function checkLibraryForExisting(newBook) {
+    for (let i = 0; i < collection.length; i++) {
+      if (collection[i].title === newBook.title) {
+        return true;
+      }
     }
+  }
 
     const _addBookToLibrary = () => {
         _checkLibraryForExisting(newBook.title)
