@@ -7,6 +7,8 @@
 
 // TODO - 1C - books should all have the same card, abandon the idea of placeholder images
 // TODO - 1D - integrate card creation with libraryManager
+// TODO - 1E - copies of books are being added
+
 
 const myLibrary = (() => {
   const collection = [];
