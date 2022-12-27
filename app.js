@@ -9,12 +9,19 @@
 // TODO - 1D - integrate card creation with libraryManager
 // TODO - 1E - copies of books are being added
 
+const bookContainer = document.querySelector('#book-container');
+const submitBtn = document.querySelector('#submit-btn');
+const form = document.getElementById('add-new-book');
+form.addEventListener('submit', (event) => {
+  console.log(event);
+  event.preventDefault();
+});
 
 const myLibrary = (() => {
   const collection = [];
 
   /**
-   * 
+   *
    * @param {string} title Book title
    * @param {string} author Book author
    * @param {number} pages Number of pages in the book
@@ -30,8 +37,7 @@ const myLibrary = (() => {
     const bookExistsInLibrary = checkLibraryForExisting(newBook);
     if (bookExistsInLibrary === true) return alert('This book is already in the library');
     addBookToLibrary(newBook);
-    console.log(newBook);
-    console.log(collection);
+    createBookCard();
     return newBook;
   }
 
@@ -41,7 +47,7 @@ const myLibrary = (() => {
  * @returns true if the book exists in the library, else false
  */
   function checkLibraryForExisting(newBook) {
-    for (let i = 0; i < collection.length; i++) {
+    for (let i = 0; i < collection.length; i += 1) {
       if (collection[i].title === newBook.title) {
         return true;
       }
@@ -57,7 +63,32 @@ const myLibrary = (() => {
     const bookExistsInLibrary = checkLibraryForExisting(book);
     if (bookExistsInLibrary === true) return alert('This book is already in the library');
     collection.push(book);
-    console.log(collection);
+  }
+
+  function createBookCard() {
+    collection.forEach((book) => {
+      const newBook = document.createElement('div');
+      const bookTitle = document.createElement('p');
+      const bookAuthor = document.createElement('p');
+      const btnContainer = document.createElement('div');
+      const readBtn = document.createElement('button');
+      const removeBtn = document.createElement('button');
+
+      bookAuthor.textContent = `${book.author} | ${book.pages} Pages`;
+      bookTitle.textContent = `${book.title}`;
+      readBtn.textContent = 'READ';
+      removeBtn.textContent = 'REMOVE';
+
+      newBook.classList.add('book');
+      bookTitle.classList.add('book-card__title');
+      bookAuthor.classList.add('book-card__details');
+      readBtn.classList.add('book-card__read-btn');
+      removeBtn.classList.add('book-card__remove-btn');
+
+      btnContainer.append(readBtn, removeBtn);
+      newBook.append(bookTitle, bookAuthor, btnContainer);
+      bookContainer.append(newBook);
+    });
   }
 
   return { libraryManager };
@@ -93,37 +124,3 @@ myLibrary.libraryManager(
   'Sun Tzu',
   300,
 );
-
-const bookContainer = document.querySelector('#book-container');
-const submitBtn = document.querySelector('#submit-btn');
-const form = document.getElementById('add-new-book')
-form.addEventListener('submit', (event) => {
-    console.log(event)
-    event.preventDefault()
-})
-
-function createBookCard() {
-  myLibrary.forEach((book) => {
-    const newBook = document.createElement('div');
-    const bookTitle = document.createElement('p');
-    const bookAuthor = document.createElement('p');
-    const btnContainer = document.createElement('div');
-    const readBtn = document.createElement('button');
-    const removeBtn = document.createElement('button');
-
-    bookAuthor.textContent = `${book.author} | ${book.pages} Pages`;
-    bookTitle.textContent = `${book.title}`;
-    readBtn.textContent = 'READ';
-    removeBtn.textContent = 'REMOVE';
-
-    newBook.classList.add('book');
-    bookTitle.classList.add('book-card__title');
-    bookAuthor.classList.add('book-card__details');
-    readBtn.classList.add('book-card__read-btn');
-    removeBtn.classList.add('book-card__remove-btn');
-
-    btnContainer.append(readBtn, removeBtn);
-    newBook.append(bookTitle, bookAuthor, btnContainer);
-    bookContainer.append(newBook);
-  });
-}
