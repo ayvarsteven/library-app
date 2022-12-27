@@ -15,6 +15,15 @@ const myLibrary = (() => {
       // if no error, add book to library
     };
 
+    libraryManager.prototype.addBook = function() {
+      const newBook = Object.create(null);
+      newBook.title = title;
+      newBook.author = author;
+      newBook.pages = pages;
+      newBook.read = read;
+      return newBook
+    }
+
   /**
  * Checks library, if book is in collection return true
  * @param {object} book Book object being passed in for comparison
@@ -58,7 +67,7 @@ const myLibrary = (() => {
     // return {title, author, pages, read}
   };
 
-  return { addBook };
+  return { libraryManager };
 })();
 
 myLibrary.addBook(
