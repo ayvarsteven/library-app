@@ -28,11 +28,17 @@ const myLibrary = (() => {
     }
   }
 
-    const _addBookToLibrary = () => {
-        _checkLibraryForExisting(newBook.title)
-        collection.push(newBook)
-        console.log(collection)
-    }
+  /**
+   * Adds book to library if the book isn't already in the library
+   * @param {object} book New book object
+   * @returns 
+   */
+  function addBookToLibrary(book) {
+    const bookExistsInLibrary = checkLibraryForExisting(book);
+    if (bookExistsInLibrary === true) return alert('This book is already in the library');
+    collection.push(book);
+    console.log(collection)
+  }
 
     const addBook = ({title, author, pages, read}) => {
         title,
