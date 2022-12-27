@@ -105,6 +105,12 @@ const myLibrary = (() => {
   }
 
   function createBookCard(book) {
+    const {
+      bookAuthor, bookTitle, readBtn, removeBtn, newBook, btnContainer,
+    } = createHtmlElements();
+    const {
+      bookContainer,
+    } = getHtmlElements();
 
       bookAuthor.textContent = `${book.author} | ${book.pages} Pages`;
       bookTitle.textContent = `${book.title}`;
