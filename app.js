@@ -112,21 +112,20 @@ const myLibrary = (() => {
       bookContainer,
     } = getHtmlElements();
 
-      bookAuthor.textContent = `${book.author} | ${book.pages} Pages`;
-      bookTitle.textContent = `${book.title}`;
-      readBtn.textContent = 'READ';
-      removeBtn.textContent = 'REMOVE';
+    bookAuthor.textContent = `${book.author} | ${book.pages} Pages`;
+    bookTitle.textContent = `${book.title}`;
+    readBtn.textContent = 'READ';
+    removeBtn.textContent = 'REMOVE';
 
-      newBook.classList.add('book');
-      bookTitle.classList.add('book-card__title');
-      bookAuthor.classList.add('book-card__details');
-      readBtn.classList.add('book-card__read-btn');
-      removeBtn.classList.add('book-card__remove-btn');
+    newBook.classList.add('book');
+    bookTitle.classList.add('book-card__title');
+    bookAuthor.classList.add('book-card__details');
+    readBtn.classList.add('book-card__read-btn');
+    removeBtn.classList.add('book-card__remove-btn');
 
-      btnContainer.append(readBtn, removeBtn);
-      newBook.append(bookTitle, bookAuthor, btnContainer);
-      bookContainer.append(newBook);
-    });
+    btnContainer.append(readBtn, removeBtn);
+    newBook.append(bookTitle, bookAuthor, btnContainer);
+    bookContainer.append(newBook);
   }
 
   return { libraryManager };
