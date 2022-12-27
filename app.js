@@ -77,7 +77,7 @@ const myLibrary = (() => {
     const bookExistsInLibrary = checkLibraryForExisting(book);
     if (bookExistsInLibrary === true) return alert('This book is already in the library');
     collection.push(book);
-    console.log(collection)
+    console.log(collection);
   }
 
   /**
