@@ -88,17 +88,14 @@ myLibrary.libraryManager(
   300,
 );
 
-
-
 const bookContainer = document.querySelector('#book-container');
 const submitBtn = document.querySelector('#submit-btn');
-// const form = document.getElementById('add-new-book')
-// form.addEventListener('submit', (event) => {
-//     console.log(event)
-//     event.preventDefault()
-// })
+const form = document.getElementById('add-new-book')
+form.addEventListener('submit', (event) => {
+    console.log(event)
+    event.preventDefault()
+})
 
-// 1B
 function createBookCard() {
   myLibrary.forEach((book) => {
     const newBook = document.createElement('div');
