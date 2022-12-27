@@ -1,5 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-use-before-define */
+/* eslint-disable no-alert */
+/* eslint-disable consistent-return */
 /* eslint-disable no-console */
-/* eslint-disable */
+// /* eslint-disable */
 
 // TODO - 1C - books should all have the same card, abandon the idea of placeholder images
 // TODO - 1D - integrate card creation with libraryManager
