@@ -9,7 +9,7 @@ const myLibrary = (() => {
   const collection = [];
 
   function libraryManager(title, author, pages, read) {
-    const newBook = Object.create(libraryManager.prototype);
+    const newBook = Object.create(null);
     newBook.title = title;
     newBook.author = author;
     newBook.pages = pages;
