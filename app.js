@@ -20,12 +20,6 @@ const myLibrary = (() => {
     console.log(newBook);
     console.log(collection);
     return newBook;
-
-      // mediator - the functions should not call each other instead the
-      // mediator should communicate with each function directly
-      // listen for add book
-      // check library for existing
-      // if no error, add book to library
   }
   libraryManager.prototype = {
     addBookToLibrary(book) {
