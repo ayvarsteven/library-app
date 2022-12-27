@@ -64,8 +64,8 @@ const myLibrary = (() => {
 myLibrary.addBook(
     'The Call of Cthulhu',
     'H.P. Lovecraft',
-    420
-)
+  420,
+);
 
 myLibrary.addBook(
  'Alice in Wonderland',
@@ -78,6 +78,7 @@ myLibrary.addBook(
  'Alexandre Dumas',
  894
 )
+
 myLibrary.addBook(
     'The Art of War',
     'Sun Tzu',
@@ -100,6 +101,7 @@ const submitBtn = document.querySelector('#submit-btn')
 //     event.preventDefault()
 // })
 
+// 1B
 function createBookCard() {
     myLibrary.forEach(book => {
         let newBook = document.createElement('div')
