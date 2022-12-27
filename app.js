@@ -7,14 +7,6 @@
 
 // TODO - connect form elements with logic
 
-const bookContainer = document.querySelector('#book-container');
-const submitBtn = document.querySelector('#submit-btn');
-const form = document.getElementById('add-new-book');
-form.addEventListener('submit', (event) => {
-  console.log(event);
-  event.preventDefault();
-});
-
 const myLibrary = (() => {
   const collection = [];
 
@@ -52,7 +44,29 @@ const myLibrary = (() => {
     };
   }
 
+  function addEventHandlers() {
+    const {
+      bookContainer, newBookFormDialog, newBookForm, newBookBtn, submitBtn, closeBtn, form,
+    } = getHtmlElements();
+
+    form.addEventListener('submit', (event) => {
+      console.log(event);
+      event.preventDefault();
+    });
+
+    newBookBtn.addEventListener('click', () => {
+      newBookFormDialog.showModal();
+    });
+
+    submitBtn.addEventListener('click', (event) => {
+      newBookFormDialog.close();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      newBookFormDialog.close();
+    });
   }
+  addEventHandlers();
 
   /**
  * Checks library, if book is in collection return true
