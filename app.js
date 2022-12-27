@@ -5,9 +5,7 @@
 /* eslint-disable no-console */
 // /* eslint-disable */
 
-// TODO - 1C - books should all have the same card, abandon the idea of placeholder images
-// TODO - 1D - integrate card creation with libraryManager
-// TODO - 1E - copies of books are being added
+// TODO - connect form elements with logic
 
 const bookContainer = document.querySelector('#book-container');
 const submitBtn = document.querySelector('#submit-btn');
