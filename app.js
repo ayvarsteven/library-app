@@ -44,7 +44,7 @@ const myLibrary = (() => {
     };
   }
 
-  function addEventHandlers() {
+  const addEventHandlers = (() => {
     const {
       bookContainer, newBookFormDialog, newBookForm, newBookBtn, submitBtn, closeBtn, form,
     } = getHtmlElements();
@@ -65,8 +65,7 @@ const myLibrary = (() => {
     closeBtn.addEventListener('click', () => {
       newBookFormDialog.close();
     });
-  }
-  addEventHandlers();
+  })();
 
   /**
  * Checks library, if book is in collection return true
