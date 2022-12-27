@@ -88,9 +88,7 @@ myLibrary.libraryManager(
   300,
 );
 
-// ??? - Constructor isn't being used at all.
 
-// TODO - create image for default books; connects images to default books. If the book title matches anything within the function then match it to one of default placeholder images. For Ex: book.title === 'The Art of War' -> loads art of war background image.
 
 const bookContainer = document.querySelector('#book-container');
 const submitBtn = document.querySelector('#submit-btn');
