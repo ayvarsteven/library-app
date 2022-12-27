@@ -38,6 +38,20 @@ const myLibrary = (() => {
     const [lastAddedBook] = collection.slice(-1);
     createBookCard(lastAddedBook);
   }
+
+  function getHtmlElements() {
+    const bookContainer = document.querySelector('#book-container');
+    const newBookFormDialog = document.querySelector('[data-modal="modal-1"]');
+    const newBookForm = document.querySelector('#add-new-book');
+    const newBookBtn = document.querySelector('#new-book');
+    const submitBtn = document.querySelector('#submit-btn');
+    const closeBtn = document.querySelector('.close-btn');
+    const form = document.getElementById('add-new-book');
+    return {
+      bookContainer, newBookFormDialog, newBookForm, newBookBtn, submitBtn, closeBtn, form,
+    };
+  }
+
   }
 
   /**
