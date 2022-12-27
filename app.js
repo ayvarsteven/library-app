@@ -87,8 +87,6 @@ const myLibrary = (() => {
    * @returns
    */
   function addBookToLibrary(book) {
-    const bookExistsInLibrary = checkLibraryForExisting(book);
-    if (bookExistsInLibrary === true) return alert('This book is already in the library');
     collection.push(book);
   }
 
