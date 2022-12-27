@@ -68,11 +68,12 @@ const myLibrary = (() => {
   return { libraryManager };
 })();
 
-myLibrary.libraryManager(
-  'The Call of Cthulhu',
-  'H.P. Lovecraft',
-  420,
-);
+// // test to see if program stops when you try to add a duplicate book
+// myLibrary.libraryManager(
+//   'The Call of Cthulhu',
+//   'H.P. Lovecraft',
+//   420,
+// );
 
 myLibrary.libraryManager(
   'The Call of Cthulhu',
@@ -81,20 +82,20 @@ myLibrary.libraryManager(
 );
 
 myLibrary.libraryManager(
- 'Alice in Wonderland',
- 'Lewis Carroll',
- 200,
+  'Alice in Wonderland',
+  'Lewis Carroll',
+  200,
 );
 
 myLibrary.libraryManager(
- 'The Count of MonteCristo',
- 'Alexandre Dumas',
+  'The Count of MonteCristo',
+  'Alexandre Dumas',
   894,
 );
 
 myLibrary.libraryManager(
-    'The Art of War',
-    'Sun Tzu',
+  'The Art of War',
+  'Sun Tzu',
   300,
 );
 
