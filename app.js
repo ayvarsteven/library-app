@@ -1,3 +1,9 @@
+/* eslint-disable */
+
+// TODO - 1A - create image for default books; connects images to default books. If the book title matches anything within the function then match it to one of default placeholder images. For Ex: book.title === 'The Art of War' -> loads art of war background image.
+
+// TODO - 1B - integrate create card function as a method
+
 const myLibrary = (() => {
     const collection = []
 
