@@ -58,7 +58,7 @@ const myLibrary = (() => {
       newBookFormDialog.showModal();
     });
 
-    submitBtn.addEventListener('click', (event) => {
+    submitBtn.addEventListener('click', () => {
       newBookFormDialog.close();
     });
 
@@ -68,7 +68,7 @@ const myLibrary = (() => {
   })();
 
   /**
-   *
+   * Mediator pattern to control the creation and uploading of books
    * @param {string} title Book title
    * @param {string} author Book author
    * @param {number} pages Number of pages in the book

@@ -1,4 +1,4 @@
 ==============================================================================================
 2022-12-27 - Tuesday
 ==============================================================================================
-TODO - connect form elements with logic
+TODO - connect form elements with logic, can't use form to create new books
