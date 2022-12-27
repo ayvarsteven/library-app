@@ -21,24 +21,6 @@ const myLibrary = (() => {
     console.log(collection);
     return newBook;
   }
-  libraryManager.prototype = {
-    addBookToLibrary(book) {
-      const bookExistsInLibrary = checkLibraryForExisting(book);
-      if (bookExistsInLibrary === true) return alert('This book is already in the library');
-      collection.push(book);
-      console.log(collection);
-    },
-    checkLibraryForExisting(newBook) {
-      for (let i = 0; i < collection.length; i++) {
-        if (collection[i].title === newBook.title) {
-          return true;
-        }
-      }
-    },
-    logCollection() {
-      console.log(collection)
-    }
-    };
 
   /**
  * Checks library, if book is in collection return true
@@ -56,7 +38,7 @@ const myLibrary = (() => {
   /**
    * Adds book to library if the book isn't already in the library
    * @param {object} book New book object
-   * @returns 
+   * @returns
    */
   function addBookToLibrary(book) {
     const bookExistsInLibrary = checkLibraryForExisting(book);
