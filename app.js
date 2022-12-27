@@ -58,7 +58,7 @@ const myLibrary = (() => {
     // return {title, author, pages, read}
   };
 
-  return { addBook, collection };
+  return { addBook };
 })();
 
 myLibrary.addBook(
