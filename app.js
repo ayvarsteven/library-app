@@ -92,14 +92,19 @@ const myLibrary = (() => {
     collection.push(book);
   }
 
-  function createBookCard() {
-    collection.forEach((book) => {
-      const newBook = document.createElement('div');
-      const bookTitle = document.createElement('p');
-      const bookAuthor = document.createElement('p');
-      const btnContainer = document.createElement('div');
-      const readBtn = document.createElement('button');
-      const removeBtn = document.createElement('button');
+  function createHtmlElements() {
+    const newBook = document.createElement('div');
+    const bookTitle = document.createElement('p');
+    const bookAuthor = document.createElement('p');
+    const btnContainer = document.createElement('div');
+    const readBtn = document.createElement('button');
+    const removeBtn = document.createElement('button');
+    return {
+      bookAuthor, bookTitle, readBtn, removeBtn, newBook, btnContainer,
+    };
+  }
+
+  function createBookCard(book) {
 
       bookAuthor.textContent = `${book.author} | ${book.pages} Pages`;
       bookTitle.textContent = `${book.title}`;
