@@ -101,37 +101,42 @@ const myLibrary = (() => {
   return { libraryManager };
 })();
 
-myLibrary.addBook(
+myLibrary.libraryManager(
   'The Call of Cthulhu',
   'H.P. Lovecraft',
   420,
 );
 
-myLibrary.addBook(
+myLibrary.libraryManager(
+  'The Call of Cthulhu',
+  'H.P. Lovecraft',
+  420,
+);
+
+myLibrary.libraryManager(
  'Alice in Wonderland',
  'Lewis Carroll',
  200,
-)
+);
 
-myLibrary.addBook(
+myLibrary.libraryManager(
  'The Count of MonteCristo',
  'Alexandre Dumas',
- 894
-)
+  894,
+);
 
-myLibrary.addBook(
+myLibrary.libraryManager(
     'The Art of War',
     'Sun Tzu',
-    300
-)
-
+  300,
+);
 
 // ??? - Constructor isn't being used at all.
 
 // TODO - create image for default books; connects images to default books. If the book title matches anything within the function then match it to one of default placeholder images. For Ex: book.title === 'The Art of War' -> loads art of war background image.
 
-const bookContainer = document.querySelector('#book-container')
-const submitBtn = document.querySelector('#submit-btn')
+const bookContainer = document.querySelector('#book-container');
+const submitBtn = document.querySelector('#submit-btn');
 // const form = document.getElementById('add-new-book')
 // form.addEventListener('submit', (event) => {
 //     console.log(event)
