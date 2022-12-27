@@ -62,8 +62,8 @@ const myLibrary = (() => {
 })();
 
 myLibrary.addBook(
-    'The Call of Cthulhu',
-    'H.P. Lovecraft',
+  'The Call of Cthulhu',
+  'H.P. Lovecraft',
   420,
 );
 
