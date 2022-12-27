@@ -85,9 +85,6 @@ myLibrary.addBook(
     300
 )
 
-// TODO - push popular books into my library array using the proper methods. 
-// myLibrary.createBook(title, author, author, pages); myLibrary array will be a private property only accessible by the my library method. Need 
-// TODO - you shouldn't be able to push onto the array directly, should be locked away within a function only accessible by its API.
 
 // ??? - Constructor isn't being used at all.
 
