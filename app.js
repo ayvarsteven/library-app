@@ -8,6 +8,14 @@
 const myLibrary = (() => {
   const collection = [];
 
+  /**
+   * 
+   * @param {string} title Book title
+   * @param {string} author Book author
+   * @param {number} pages Number of pages in the book
+   * @param {boolean} read True if book is read, else false
+   * @returns object with book properties
+   */
   function libraryManager(title, author, pages, read) {
     const newBook = Object.create(null);
     newBook.title = title;
