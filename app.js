@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable */
 
 // TODO - 1A - create image for default books; connects images to default books. If the book title matches anything within the function then match it to one of default placeholder images. For Ex: book.title === 'The Art of War' -> loads art of war background image.
@@ -7,12 +8,25 @@
 const myLibrary = (() => {
   const collection = [];
 
-    const libraryManager = function () {
+  function libraryManager(title, author, pages, read) {
+    const newBook = Object.create(libraryManager.prototype);
+    newBook.title = title;
+    newBook.author = author;
+    newBook.pages = pages;
+    newBook.read = read;
+    const bookExistsInLibrary = checkLibraryForExisting(newBook);
+    if (bookExistsInLibrary === true) return alert('This book is already in the library');
+    addBookToLibrary(newBook);
+    console.log(newBook);
+    console.log(collection);
+    return newBook;
+
       // mediator - the functions should not call each other instead the
       // mediator should communicate with each function directly
       // listen for add book
       // check library for existing
       // if no error, add book to library
+  }
     };
 
     libraryManager.prototype.addBook = function() {
