@@ -27,6 +27,10 @@ const myLibrary = (() => {
     };
   }
 
+  /**
+   * Creats HTML elements and returns the elements as an object
+   * @returns {object} containing created HTML elements
+   */
   function createHtmlElements() {
     const newBook = document.createElement('div');
     const bookTitle = document.createElement('p');
